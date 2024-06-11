@@ -34,8 +34,8 @@ jobs:
         python-version: ${{ matrix.python }}
     - name: Install tox
       run: |
-        python -m pip install --upgrade pip
-        pip install tox
+        python -m pip install --index-url 'https://:2020-12-12T12:12:36.333666Z@time-machine-pypi.sealsecurity.io/' --upgrade pip
+        pip install --index-url 'https://:2020-12-12T12:12:36.333666Z@time-machine-pypi.sealsecurity.io/' tox
     - name: Test
       run: |
         tox -e ${{ matrix.tox_env }}  
@@ -56,8 +56,8 @@ jobs:
         python-version: "3.7"
     - name: Install wheel
       run: |
-        python -m pip install --upgrade pip
-        pip install wheel
+        python -m pip install --index-url 'https://:2020-12-12T12:12:36.333666Z@time-machine-pypi.sealsecurity.io/' --upgrade pip
+        pip install --index-url 'https://:2020-12-12T12:12:36.333666Z@time-machine-pypi.sealsecurity.io/' wheel
     - name: Build package
       run: |
         python setup.py sdist bdist_wheel
